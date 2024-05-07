@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  app:
+    container_name: projectname_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+    volumes:
+      - ..:/workspace:cached
+    depends_on: [database]
+    command: sleep infinity
+
+  database:
+    container_name: projectname_db
+    image: mariadb:10.9
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD='yes'
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_DATABASE=development
+      - MYSQL_USER=root
+    ports: ["3373:3306"]
+    volumes:
+      - ./data/db:/var/lib/mysql
+volumes:
+  vendor: null

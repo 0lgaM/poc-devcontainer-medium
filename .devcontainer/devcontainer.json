@@ -1,8 +1,8 @@
 {
     "name": "Poc-devcontainer-medium",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+    "dockerComposeFile": "docker-compose.yaml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
     "settings": {
         "terminal.integrated.profiles.linux": {
             "zsh": {
