@@ -24,6 +24,6 @@ services:
       - MYSQL_USER=root
     ports: ["3373:3306"]
     volumes:
-      - ./data/db:/var/lib/mysql
+      - mariadb-data:/var/lib/mysql
 volumes:
-  vendor: null
+  mariadb-data:
