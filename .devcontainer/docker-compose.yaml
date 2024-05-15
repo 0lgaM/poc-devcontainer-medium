@@ -25,5 +25,4 @@ services:
     ports: ["3373:3306"]
     volumes:
       - ./data/db:/var/lib/mysql
-volumes:
-  vendor: null
+
